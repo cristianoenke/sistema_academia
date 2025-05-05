@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webapp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+    <div id="main-page">
+        <button class="main-button" id="alunos-btn">Alunos</button>
+        <button class="main-button" id="instrutores-btn">Instrutores</button>
+        <button class="main-button" id="treinos-btn">Treinos</button>
+        <button class="main-button" id="exercicios-btn">Exercícios</button>
+              
+        <div id="alunos-sub-buttons" style="display: none;">
+            <button class="sub-button" id="visualizar-alunos-btn">Visualizar Alunos</button>
+            <button class="sub-button" id="inserir-aluno-btn">Inserir Aluno</button>
+            <button class="sub-button" id="excluir-aluno-btn">Excluir Aluno</button>
+            <button class="sub-button" id="aluno-back-btn">Voltar</button>
+        </div>        
+        
+        <div id="instrutores-sub-buttons" style="display: none;">
+            <button class="sub-button" id="visualizar-instrut-btn">Visualizar Instrutores</button>
+            <button class="sub-button" id="inserir-instrut-btn">Inserir Instrutor</button>
+            <button class="sub-button" id="excluir-instrut-btn">Excluir Instrutor</button>
+            <button class="sub-button" id="instrut-back-btn">Voltar</button>
+        </div>
+        
+        <div id="treinos-sub-buttons" style="display: none;">
+            <button class="sub-button" id="visualizar-treino-btn">Visualizar Treinos</button>
+            <button class="sub-button" id="inserir-treino-btn">Inserir Treinos</button>
+            <button class="sub-button" id="excluir-treino-btn">Excluir Treinos</button>
+            <button class="sub-button" id="treino-back-btn">Voltar</button>
+        </div>
+        
+       <div id="exercicios-sub-buttons" style="display: none;">
+            <button class="sub-button" id="visualizar-exercicios-btn">Visualizar Exercícios</button>
+            <button class="sub-button" id="inserir-exercicios-btn">Inserir Exercício</button>
+            <button class="sub-button" id="excluir-exercicios-btn">Excluir Exercício</button>
+            <button class="sub-button" id="exerc-back-btn">Voltar</button>
+        </div>
+        <button id="alto-contraste-btn">Alto Contraste</button>
+    </div>
+</body>
+</html>
