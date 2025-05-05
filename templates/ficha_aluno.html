@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha de Aluno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div id="ficha-visualizacao">
+
+    <h1>Ficha de Aluno</h1>
+    <p><strong>Nome:</strong> {{ aluno.nome_aluno }}</p>
+    <p><strong>Instrutor:</strong> {{ aluno.instrutores[0].nome_instrutor if aluno.instrutores else "Sem instrutor" }}</p>
+    
+    <h2>Treinos:</h2>
+    <ul>
+        {% for treino, dia, periodo in treinos_associados %}
+            <li>{{ treino }} - Dia: {{ dia }}, Período: {{ periodo }}</li>
+        {% endfor %}
+    </ul>
+    
+    <button class="main-button" onclick="window.location.href='/'">Voltar</button>
+        </div>
+
+</body>
+</html>

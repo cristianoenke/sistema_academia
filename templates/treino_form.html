@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Treino</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div id="ficha-visualizacao">
+
+    <h1>Adicionar Treino</h1>
+    <form action="{{ url_for('add_treino') }}" method="post">
+        <label for="nome">Nome do Treino:</label>
+        <input type="text" id="nome_treino" name="nome_treino" required><br><br>
+        
+        <label>Exercicios:</label><br>
+        {% for exercicio in exercicios %}
+            <input type="checkbox" name="exercicios" value="{{ exercicio.id }}"> {{ exercicio.nome_exerc }}<br>
+        {% endfor %}
+        <br>
+         <label>Instrutor:</label><br>
+         {% for instrutor in instrutores %}
+             <input type="checkbox" name="instrutores" value="{{ instrutor.id }}"> {{ instrutor.nome_instrutor }}<br>
+         {% endfor %}
+         <br>
+        <input class="main-button" type="submit" value="Adicionar Treino">
+    </form>
+    <button class="main-button" onclick="window.location.href='/'">Voltar</button>
+        </div>
+
+</body>
+</html>

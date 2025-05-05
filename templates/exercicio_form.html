@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Execicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div id="ficha-visualizacao">
+
+    <h1>Adicionar Exercicio</h1>
+    <form action="{{ url_for('add_exercicio') }}" method="post">
+        <label for="nome">Nome :</label>
+        <input type="text" id="nome" name="nome_exerc" required><br><br>
+        
+        <label for="categ">Categoria:</label>
+        <input type="text" id="idade" name="categ_exerc" required><br><br>
+        
+        <label for="descr">Descricao:</label>
+        <input type="text" id="idade" name="descr_exerc" required><br><br>
+        
+        
+        <input class="main-button" type="submit" value="Adicionar Exercicio">
+    </form>
+        <button class="main-button" onclick="window.location.href='/'">Voltar</button>
+        </div>
+
+</body>
+</html>

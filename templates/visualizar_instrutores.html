@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Instrutores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div id="ficha-visualizacao">
+    <h1>Instrutores Disponíveis</h1>
+    {% if instrutores %}
+        <ul>
+            {% for instrutor in instrutores %}
+                <li>
+                    <strong>{{ instrutor.nome_instrutor}}</strong> 
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há Instrutores cadastrados.</p>
+    {% endif %}
+    
+</body>
+    <button class="main-button" onclick="window.location.href='/'">Voltar</button>
+    </div>
+</html>

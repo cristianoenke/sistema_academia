@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir Instrutor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div id="ficha-visualizacao">
+
+    <h1>Excluir Instrutor</h1>
+    <form method="POST" action="{{ url_for('excluir_instrutor') }}">
+        <ul>
+            {% for instrutor in instrutores %}
+                <li>
+                    <label>
+                        <input type="checkbox" name="instrutor_ids" value="{{ instrutor.id }}">
+                        {{ instrutor.nome_instrutor }}
+                    </label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button class="exclude-button" type="submit">Excluir Selecionados</button>
+    </form>
+    
+    <button class="main-button" onclick="window.location.href='/'">Voltar</button>
+        </div>
+
+</body>
+</html>
+

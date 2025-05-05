@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Intrutor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div id="ficha-visualizacao">
+    <h1>Adicionar Intrutor</h1>
+    <form action="{{ url_for('add_instrutor') }}" method="post">
+        <label for="nome">Nome :</label>
+        <input type="text" id="nome" name="nome_instrutor" required><br><br>
+        
+        <label for="nome">Telefone :</label>
+        <input type="text" id="nome" name="fone_instrutor" required><br><br>
+        
+        <label for="nome">E-mail :</label>
+        <input type="email" id="nome" name="email_instrutor" required><br><br>
+        
+        <label for="nome">Sexo :</label>
+        <input type="text" id="nome" name="sexo_instrutor" required><br><br>
+        
+        <label for="nome">Data de Nascimento :</label>
+        <input type="date" id="nome" name="nasc_instrutor" required><br><br>        
+        
+        <input class="main-button" type="submit" value="Adicionar Instrutor">
+    </form>
+    <button class="main-button" onclick="window.location.href='/'">Voltar</button>
+        </div>
+
+</body>
+</html>

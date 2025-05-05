@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Aluno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div id="ficha-visualizacao">
+
+    <h1>Adicionar Aluno</h1>
+    <form action="{{ url_for('add_aluno') }}" method="post">
+        <label for="nome">Nome :</label>
+        <input type="text" id="nome_aluno" name="nome_aluno" required><br><br>
+        
+         <label for="nome">Fone:</label>
+         <input type="text" id="fone_aluno" name="fone_aluno" required><br><br>
+       
+         <label for="nome">Data de Nascimento:</label>
+         <input type="date" id="nasc_aluno" name="nasc_aluno" required><br><br>
+
+         <label for="nome">Sexo:</label>
+         <input type="text" id="sexo_aluno" name="sexo_aluno" required><br><br>
+            
+         <label for="nome">E-mail:</label>
+         <input type="email" id="email_aluno" name="email_aluno" required><br><br>       
+        
+        <label>Instrutores :</label><br>
+        {% for instrutor in instrutores %}
+            <input type="checkbox" name="instrutores" value="{{ instrutor.id }}"> {{ instrutor.nome_instrutor }}<br>
+        {% endfor %}
+        
+        <h3>Selecione os treinos e o período para cada dia da semana:</h3>
+        {% for dia in ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo'] %}
+            <label>{{ dia.capitalize() }}:</label><br>
+            {% for treino in treinos %}
+                <input type="checkbox" name="treinos_{{ dia }}" value="{{ treino.id }}"> {{ treino.nome }}
+                <select name="periodo_{{ dia }}_{{ treino.id }}">
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select><br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        
+        <br>
+        <input class="main-button" type="submit" value="Adicionar Aluno">
+    </form>
+    <button class="main-button" onclick="window.location.href='/'">Voltar</button>
+    </div">
+
+</body>
+</html>
